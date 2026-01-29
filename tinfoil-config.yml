@@ -5,10 +5,17 @@ memory: 8192
 
 containers:
   - name: "app"
-    image: "ghcr.io/tanyav2/simple-container-private:latest@sha256:94a630c7df59a5958760e8e000d65de12c43d0a0bd86f75d51de0e9a1947fa56"
+    image: "ghcr.io/tanyav2/simple-container-private:latest@sha256:d699a189a47c0cabfe42f89f41bc99e4d7c43ba47c4efca8b3ec5df4a991510d"
+    env:
+      - APP_NAME: "tinfoil-test-app"
+      - LOG_LEVEL: "debug"
+      - MAX_TOKENS: "100"
+    secrets:
+      - TINFOIL_API_KEY
 
 shim:
   listen-port: 443
   upstream-port: 8000
   paths:
     - /health
+    - /chat
