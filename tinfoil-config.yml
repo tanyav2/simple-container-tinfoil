@@ -16,8 +16,6 @@ containers:
 shim:
   listen-port: 443
   upstream-port: 8000
-  tls-mode: production
-  tls-challenge: tls
   paths:
     - /health
     - /chat
