@@ -16,6 +16,7 @@ containers:
 shim:
   listen-port: 443
   upstream-port: 8000
+  tls-challenge: http
   paths:
     - /health
     - /chat
